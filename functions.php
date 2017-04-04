@@ -67,6 +67,14 @@ function bse_wordpress_setup() {
 
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
+
+	add_theme_support( 'custom-logo', array(
+		'height'      => 50,
+		'width'       => 240,
+		'flex-height' => true,
+		'flex-width'  => true,
+		'header-text' => array( '.navbar-brand' ),
+	) );
 }
 endif;
 add_action( 'after_setup_theme', 'bse_wordpress_setup' );
@@ -95,8 +103,8 @@ function bse_wordpress_widgets_init() {
 		'description'   => esc_html__( 'Add widgets here.', 'bse-wordpress' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
 	) );
 }
 add_action( 'widgets_init', 'bse_wordpress_widgets_init' );
@@ -156,4 +164,8 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/jetpack.php';
 
 // Register Custom Navigation Walker
-require_once('wp-bootstrap-navwalker.php');
+require_once('walkers/wp-bootstrap-navwalker.php');
+
+// Register Custom Media Object Walker
+require_once('walkers/wp-bootstrap-mediawalker.php');
+

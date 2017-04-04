@@ -30,7 +30,7 @@ get_header(); ?>
 					?>
 
 					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'bse-wordpress' ); ?></h2>
+						<h4 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'bse-wordpress' ); ?></h4>
 						<ul>
 						<?php
 							wp_list_categories( array(

@@ -8,6 +8,7 @@
  */
 
 get_header(); ?>
+	<div id="content" class="<?php echo sidebar_class('container') ?>">
 	<main id="main" class="page page-main <?php echo sidebar_class('fixed-width-right') ?>" role="main">
 		<div class="<?php echo sidebar_class('page-content pr-sm-30') ?><?php echo not_sidebar_class('container') ?>">
 		<?php
@@ -42,5 +43,6 @@ get_header(); ?>
 get_sidebar();
 ?>
 </main><!-- #main -->
+</div>
 <?php
 get_footer();

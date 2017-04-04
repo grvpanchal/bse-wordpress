@@ -42,7 +42,13 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
+					<?php
+					if ( function_exists( 'has_custom_logo' ) && has_custom_logo() ) :
+						the_custom_logo();
+					else : 
+					?>
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="navbar-brand"><?php bloginfo( 'name' ); ?></a>
+					<?php endif; ?>
 				</div>
 				
 				<?php
@@ -61,5 +67,3 @@
 			</div>
 		</nav>
 	</header><!-- #masthead -->
-
-	<div id="content" class="<?php echo sidebar_class('container') ?>">
