@@ -27,16 +27,21 @@
 <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class(cards_class('well b-0 m-xs-0 p-xs-0')); ?>>
 <div id="page" class="site">
 	<!--<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'bse-wordpress' ); ?></a>-->
-
+	
 	<header id="masthead" class="site-header" role="banner">
 
-		<nav class="navbar navbar-default navbar-static-top navbar-slide-nav" role="navigation">
+		<nav class="navbar navbar-inverse navbar-static-top navbar-slide-nav mb-xs-0" role="navigation">
 			<div class="container">
+				<div class="navbar-right-static ml-xs-0">
+					<ul class="navbar-nav nav">
+						<li><a class="fs-xs-1-4" data-toggle="collapse" data-target="#searchbox"><span class="glyphicon glyphicon-search"></span></a></li>
+					</ul>
+				</div>
 				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target="#navbar">
+					<button type="button" class="navbar-toggle pull-left" data-toggle="offcanvas" data-target="#navbar">
 						<span class="sr-only">Toggle navigation</span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
@@ -66,4 +71,11 @@
 				?>
 			</div>
 		</nav>
+		<div class="mb-xs-20">
+			<div class="collapse" id="searchbox">
+				<div class="well mb-xs-0 pb-xs-0">
+					<?php get_search_form() ?>
+				</div>
+			</div>
+		</div>
 	</header><!-- #masthead -->

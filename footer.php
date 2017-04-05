@@ -13,7 +13,7 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="footer navbar-default" role="contentinfo">
+	<footer id="colophon" class="footer navbar-inverse" role="contentinfo">
 		<div class="container">
 			<p><a href="<?php echo esc_url( __( 'https://wordpress.org/', 'bse-wordpress' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'bse-wordpress' ), 'WordPress' ); ?></a>
 				<span class="sep"> | </span>

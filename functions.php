@@ -126,6 +126,14 @@ function bse_wordpress_scripts() {
 add_action( 'wp_enqueue_scripts', 'bse_wordpress_scripts' );
 
 /**
+ * The Excert filter.
+ */
+ function new_excerpt_more( $more ) {
+    return '...';
+}
+add_filter('excerpt_more', 'new_excerpt_more');
+
+/**
  * Sidebar Class.
  */
  function sidebar_class($class_name) {
@@ -138,6 +146,19 @@ add_action( 'wp_enqueue_scripts', 'bse_wordpress_scripts' );
 		 return $class_name;
 	 }
  }
+
+// Card class - designed for blogs only- pages excluded
+
+ function cards_class($class_name) {
+	 if ( is_front_page() && is_home() ) {
+		return $class_name;
+	 }
+
+	 if(is_single() || is_category() || is_archive()) {
+		 return $class_name;
+	 }
+ }
+
 /**
  * Implement the Custom Header feature.
  */
@@ -168,4 +189,7 @@ require_once('walkers/wp-bootstrap-navwalker.php');
 
 // Register Custom Media Object Walker
 require_once('walkers/wp-bootstrap-mediawalker.php');
+
+// Register Comment form Walker
+require_once('walkers/wp-bootstrap-commentformwalker.php');
 

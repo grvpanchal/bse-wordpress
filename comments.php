@@ -20,16 +20,17 @@ if ( post_password_required() ) {
 }
 ?>
 
-<div id="comments" class="comments-area">
+<div id="comments" class="comments-area <?php echo cards_class('panel panel-default panel-body'); ?>">
 
 	<?php
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) : ?>
 		<h4 class="comments-title">
-			Comments - 
+			Comments  <span class="badge">
 			<?php
 				echo get_comments_number()
 			?>
+			</span>
 		</h4><!-- .comments-title -->
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
@@ -70,8 +71,8 @@ if ( post_password_required() ) {
 		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'bse-wordpress' ); ?></p>
 	<?php
 	endif;
-
-	comment_form();
 	?>
-
+	
+		<?php comment_form(); ?>
+	
 </div><!-- #comments -->

@@ -30,13 +30,24 @@ function bs_media_comment($comment, $args, $depth) {
           </div>
           <div class="media-body">
             <h4 class="media-heading comment-author vcard">
-            <?php printf('<cite class="fn">%1$s %2$s</cite>',
+            <?php printf('<span class="fn font-weight-bold">%1$s %2$s</span>',
                   get_comment_author_link(),
                   // If current post author is also comment author, make it known visually.
-                  ($comment->user_id === $post->post_author) ? '<span class="label"> ' . __(
+                  ($comment->user_id === $post->post_author) ? '<span class="label label-primary font-weight-normal fs-xs-0-6"> ' . __(
                       'Post author',
                       'sage'
-                  ) . '</span> ' : ''); ?>                
+                  ) . '</span> ' : ''); ?>
+                  <small class="meta"> - 
+                    <?php printf('<a href="%1$s" class="text-muted"><time datetime="%2$s">%3$s</time></a>',
+                                esc_url(get_comment_link($comment->comment_ID)),
+                                get_comment_time('c'),
+                                sprintf(
+                                    __('%1$s at %2$s', 'sage'),
+                                    get_comment_date(),
+                                    get_comment_time()
+                                )); 
+                    ?>
+                </small>
             </h4>
             <?php if ('0' == $comment->comment_approved) : ?>
               <p class="comment-awaiting-moderation">
@@ -44,17 +55,6 @@ function bs_media_comment($comment, $args, $depth) {
               </p>
             <?php endif; ?>
             <?php comment_text(); ?>
-            <p class="meta">
-                <?php printf('<a href="%1$s"><time datetime="%2$s">%3$s</time></a>',
-                            esc_url(get_comment_link($comment->comment_ID)),
-                            get_comment_time('c'),
-                            sprintf(
-                                __('%1$s at %2$s', 'sage'),
-                                get_comment_date(),
-                                get_comment_time()
-                            )); 
-                ?>
-            </p>
             <p class="reply">
                 <?php comment_reply_link( array_merge($args, array(
                             //'reply_text' => __('Reply <span>&darr;</span>', 'sage'),

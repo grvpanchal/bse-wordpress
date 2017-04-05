@@ -13,6 +13,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 ?>
 
 <aside id="secondary" class="widget-area page-sidebar" role="complementary">
+    <div class="<?php echo cards_class('panel panel-default panel-body'); ?>">
 	<?php if(function_exists('dynamic_sidebar')) {
 
     ob_start();
@@ -29,6 +30,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 
     echo $sidebar_corrected_ul;
     } 
-
+    
   ?>
+  </div>
 </aside><!-- #secondary -->
