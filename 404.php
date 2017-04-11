@@ -12,7 +12,7 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-			<section class="error-404 not-found">
+			<section class="error-404 not-found container-login-2">
 				<header class="text-center">
 					<h1><span class="fs-xs-3-2 text-danger">404</span></h1>
 					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'bse-wordpress' ); ?></h1>

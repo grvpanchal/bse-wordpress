@@ -132,7 +132,6 @@ add_action( 'wp_enqueue_scripts', 'bse_wordpress_scripts' );
     return '...';
 }
 add_filter('excerpt_more', 'new_excerpt_more');
-
 /**
  * Sidebar Class.
  */
@@ -150,7 +149,7 @@ add_filter('excerpt_more', 'new_excerpt_more');
 // Card class - designed for blogs only- pages excluded
 
  function cards_class($class_name) {
-	 if ( is_front_page() && is_home() ) {
+	 if ( is_home() ) {
 		return $class_name;
 	 }
 
@@ -193,3 +192,12 @@ require_once('walkers/wp-bootstrap-mediawalker.php');
 // Register Comment form Walker
 require_once('walkers/wp-bootstrap-commentformwalker.php');
 
+// Register Paginination 
+require_once('walkers/wp-bootstrap-pagination.php');
+
+function remove_p_on_pages() {
+    if ( is_page() ) {
+        remove_filter( 'the_content', 'wpautop' );
+    }
+}
+add_action( 'wp_head', 'remove_p_on_pages' );

@@ -8,9 +8,9 @@
  */
 
 get_header(); ?>
-	<div id="content" class="<?php echo sidebar_class('container') ?>">
+	<div class="<?php echo sidebar_class('container') ?>">
 	<main id="main" class="page page-main <?php echo sidebar_class('fixed-width-right') ?>" role="main">
-		<div class="<?php echo sidebar_class('page-content pr-sm-30') ?><?php echo not_sidebar_class('container') ?>">
+		<div id="content" class="<?php echo sidebar_class('page-content pr-sm-30') ?><?php echo not_sidebar_class('container') ?>">
 		<?php
 			while ( have_posts() ) : the_post();
 

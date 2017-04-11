@@ -13,7 +13,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 ?>
 
 <aside id="secondary" class="widget-area page-sidebar" role="complementary">
-    <div class="<?php echo cards_class('panel panel-default panel-body'); ?>">
+    <div class="<?php echo cards_class('panel panel-default panel-body mt-xs-20'); ?>">
 	<?php if(function_exists('dynamic_sidebar')) {
 
     ob_start();

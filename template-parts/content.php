@@ -9,7 +9,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(cards_class('panel panel-default panel-body')); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(cards_class('panel panel-default panel-body mt-xs-20')); ?>>
 	<header class="entry-header">
 		<?php
 		if ( is_single() ) :
@@ -19,7 +19,7 @@
 		endif;
 
 		if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta text-right text-muted mb-xs-10 mb-sm-20">
+		<div class="entry-meta text-right text-muted mb-xs-10">
 			<small><?php bse_wordpress_posted_on(); ?></small>
 		</div><!-- .entry-meta -->
 		<?php
