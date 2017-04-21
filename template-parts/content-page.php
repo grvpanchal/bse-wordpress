@@ -20,7 +20,7 @@
 			the_content();
 
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'bse-wordpress' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'bootstap-essentials' ),
 				'after'  => '</div>',
 			) );
 		?>
@@ -32,7 +32,7 @@
 				edit_post_link(
 					sprintf(
 						/* translators: %s: Name of current post */
-						esc_html__( 'Edit %s', 'bse-wordpress' ),
+						esc_html__( 'Edit %s', 'bootstap-essentials' ),
 						the_title( '<span class="screen-reader-text">"', '"</span>', false )
 					),
 					'<span class="edit-link">',
