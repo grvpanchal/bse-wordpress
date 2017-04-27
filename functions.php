@@ -142,13 +142,16 @@ add_filter('excerpt_more', 'new_excerpt_more');
 
 // Card class - designed for blogs only- pages excluded
 
- function cards_class($class_name) {
-	 if ( is_home() ) {
+ function cards_class($class_name, $else_class = '') {
+	 if ( is_home() && get_option( 'blog_panel')=='1' ) {
 		return $class_name;
 	 }
 
-	 if(is_single() || is_category() || is_archive()) {
+	 else if((is_single() || is_category() || is_archive()) && get_option( 'blog_panel')=='1') {
 		 return $class_name;
+	 }
+	 else {
+		 return $else_class;
 	 }
  }
 
@@ -193,3 +196,11 @@ function remove_p_on_pages() {
     }
 }
 add_action( 'wp_head', 'remove_p_on_pages' );
+
+function theme_styles() {
+	wp_enqueue_style( 'bs', 'https://cdn.rawgit.com/grvpanchal/bse-theme-compiler/e86d8e2f/dist/themes/'. get_option('style_option') . '/css/'. get_option('style_option') .'-bootstrap.min.css');
+	wp_enqueue_style( 'bse', 'https://cdn.rawgit.com/grvpanchal/bse-theme-compiler/e86d8e2f/dist/themes/'. get_option('style_option') .'/css/'. get_option('style_option') .'-bootstrap-essentials.min.css');
+}
+
+add_action( 'wp_enqueue_scripts', 'theme_styles' );
+
