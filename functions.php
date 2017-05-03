@@ -20,9 +20,9 @@ function bse_wordpress_setup() {
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
 	 * If you're building a theme based on Bootstap Essentials, use a find and replace
-	 * to change 'bse-wordpress' to the name of your theme in all the template files.
+	 * to change 'bootstap-essentials' to the name of your theme in all the template files.
 	 */
-	load_theme_textdomain( 'bse-wordpress', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'bootstap-essentials', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -44,7 +44,7 @@ function bse_wordpress_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'menu-1' => esc_html__( 'Primary', 'bse-wordpress' ),
+		'menu-1' => esc_html__( 'Primary', 'bootstap-essentials' ),
 	) );
 
 	/*
@@ -58,12 +58,6 @@ function bse_wordpress_setup() {
 		'gallery',
 		'caption',
 	) );
-
-	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'bse_wordpress_custom_background_args', array(
-		'default-color' => 'ffffff',
-		'default-image' => '',
-	) ) );
 
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
@@ -98,9 +92,9 @@ add_action( 'after_setup_theme', 'bse_wordpress_content_width', 0 );
  */
 function bse_wordpress_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'bse-wordpress' ),
+		'name'          => esc_html__( 'Sidebar', 'bootstap-essentials' ),
 		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'bse-wordpress' ),
+		'description'   => esc_html__( 'Add widgets here.', 'bootstap-essentials' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h4 class="widget-title">',
@@ -113,11 +107,11 @@ add_action( 'widgets_init', 'bse_wordpress_widgets_init' );
  * Enqueue scripts and styles.
  */
 function bse_wordpress_scripts() {
-	wp_enqueue_style( 'bse-wordpress-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'bootstap-essentials-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'bse-wordpress-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_script( 'bootstap-essentials-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
-	wp_enqueue_script( 'bse-wordpress-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script( 'bootstap-essentials-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -148,20 +142,18 @@ add_filter('excerpt_more', 'new_excerpt_more');
 
 // Card class - designed for blogs only- pages excluded
 
- function cards_class($class_name) {
-	 if ( is_home() ) {
+ function cards_class($class_name, $else_class = '') {
+	 if ( is_home() && get_option( 'blog_panel')=='1' ) {
 		return $class_name;
 	 }
 
-	 if(is_single() || is_category() || is_archive()) {
+	 else if((is_single() || is_category() || is_archive()) && get_option( 'blog_panel')=='1') {
 		 return $class_name;
 	 }
+	 else {
+		 return $else_class;
+	 }
  }
-
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
@@ -195,9 +187,20 @@ require_once('walkers/wp-bootstrap-commentformwalker.php');
 // Register Paginination 
 require_once('walkers/wp-bootstrap-pagination.php');
 
+// Bootstrap Dashboard
+require_once('bootstrapmenu.php');
+
 function remove_p_on_pages() {
     if ( is_page() ) {
         remove_filter( 'the_content', 'wpautop' );
     }
 }
 add_action( 'wp_head', 'remove_p_on_pages' );
+
+function theme_styles() {
+	wp_enqueue_style( 'bs', 'https://cdn.rawgit.com/grvpanchal/bse-theme-compiler/e86d8e2f/dist/themes/'. get_option('style_option') . '/css/'. get_option('style_option') .'-bootstrap.min.css');
+	wp_enqueue_style( 'bse', 'https://cdn.rawgit.com/grvpanchal/bse-theme-compiler/e86d8e2f/dist/themes/'. get_option('style_option') .'/css/'. get_option('style_option') .'-bootstrap-essentials.min.css');
+}
+
+add_action( 'wp_enqueue_scripts', 'theme_styles' );
+

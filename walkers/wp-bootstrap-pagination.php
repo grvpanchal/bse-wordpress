@@ -7,10 +7,10 @@ function wp_bootstrap_pagination( $args = array() ) {
     $defaults = array(
         'range'           => 4,
         'custom_query'    => FALSE,
-        'previous_string' => __( '&lsaquo;', 'text-domain' ),
-        'next_string'     => __( '&rsaquo;', 'text-domain' ),
-        'first_string'    => __( '&laquo;', 'text-domain' ),
-        'last_string'     => __( '&raquo;', 'text-domain' ),
+        'previous_string' => __( '&lsaquo;', 'bootstap-essentials' ),
+        'next_string'     => __( '&rsaquo;', 'bootstap-essentials' ),
+        'first_string'    => __( '&laquo;', 'bootstap-essentials' ),
+        'last_string'     => __( '&raquo;', 'bootstap-essentials' ),
         'before_output'   => '<div class="post-nav"><ul class="pagination">',
         'after_output'    => '</ul></div>'
     );
@@ -57,7 +57,7 @@ function wp_bootstrap_pagination( $args = array() ) {
     if ( $firstpage && (1 != $page) )
         $echo .= '<li class="previous"><a href="' . $firstpage . '">' . $args['first_string'] . '</a></li>';
     if ( $previous && (1 != $page) )
-        $echo .= '<li><a href="' . $previous . '" title="' . __( 'previous', 'text-domain') . '">' . $args['previous_string'] . '</a></li>';
+        $echo .= '<li><a href="' . $previous . '" title="' . __( 'previous', 'bootstap-essentials') . '">' . $args['previous_string'] . '</a></li>';
     
     if ( !empty($min) && !empty($max) ) {
         for( $i = $min; $i <= $max; $i++ ) {
@@ -72,7 +72,7 @@ function wp_bootstrap_pagination( $args = array() ) {
     $next = intval($page) + 1;
     $next = esc_attr( get_pagenum_link($next) );
     if ($next && ($count != $page) )
-        $echo .= '<li><a href="' . $next . '" title="' . __( 'next', 'text-domain') . '">' . $args['next_string'] . '</a></li>';
+        $echo .= '<li><a href="' . $next . '" title="' . __( 'next', 'bootstap-essentials') . '">' . $args['next_string'] . '</a></li>';
     
     $lastpage = esc_attr( get_pagenum_link($count) );
     if ( $lastpage ) {
@@ -87,8 +87,8 @@ function wp_bootstrap_pager()
     $defaults = array(
         'range'           => 4,
         'custom_query'    => FALSE,
-        'previous_string' => __( '&laquo; Older posts', 'text-domain' ),
-        'next_string'     => __( 'Newer posts &raquo;', 'text-domain' ),
+        'previous_string' => __( '&laquo; Newer posts', 'bootstap-essentials' ),
+        'next_string'     => __( 'Older posts &raquo;', 'bootstap-essentials' ),
         'before_output'   => '<div class="post-nav"><ul class="pager">',
         'after_output'    => '</ul></div>'
     );
@@ -132,12 +132,12 @@ function wp_bootstrap_pager()
     $previous = intval($page) - 1;
     $previous = esc_attr( get_pagenum_link($previous) );
     if ( $previous && (1 != $page) )
-        $echo .= '<li class="previous"><a href="' . $previous . '" title="' . __( 'previous', 'text-domain') . '">' . $args['previous_string'] . '</a></li>';
+        $echo .= '<li class="previous"><a href="' . $previous . '" title="' . __( 'previous', 'bootstap-essentials') . '">' . $args['previous_string'] . '</a></li>';
 
     $next = intval($page) + 1;
     $next = esc_attr( get_pagenum_link($next) );
     if ($next && ($count != $page) )
-        $echo .= '<li class="next"><a href="' . $next . '" title="' . __( 'next', 'text-domain') . '">' . $args['next_string'] . '</a></li>';
+        $echo .= '<li class="next"><a href="' . $next . '" title="' . __( 'next', 'bootstap-essentials') . '">' . $args['next_string'] . '</a></li>';
 
     if ( isset($echo) )
         echo $args['before_output'] . $echo . $args['after_output'];

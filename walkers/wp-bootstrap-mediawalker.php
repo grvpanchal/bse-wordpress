@@ -13,7 +13,7 @@ function bs_media_comment($comment, $args, $depth) {
       <li class="media" id="comment-<?php comment_ID(); ?>">
         <div class="media-body">
           <p>
-            <?php _e('Pingback:', 'sage'); ?> <?php comment_author_link(); ?>
+            <?php _e('Pingback:', 'bootstap-essentials'); ?> <?php comment_author_link(); ?>
           </p>
         </div><!--/.media-body -->
       </li>
@@ -35,14 +35,14 @@ function bs_media_comment($comment, $args, $depth) {
                   // If current post author is also comment author, make it known visually.
                   ($comment->user_id === $post->post_author) ? '<span class="label label-primary font-weight-normal fs-xs-0-6"> ' . __(
                       'Post author',
-                      'sage'
+                      'bootstap-essentials'
                   ) . '</span> ' : ''); ?>
                   <small class="meta"> - 
                     <?php printf('<a href="%1$s" class="text-muted"><time datetime="%2$s">%3$s</time></a>',
                                 esc_url(get_comment_link($comment->comment_ID)),
                                 get_comment_time('c'),
                                 sprintf(
-                                    __('%1$s at %2$s', 'sage'),
+                                    __('%1$s at %2$s', 'bootstap-essentials'),
                                     get_comment_date(),
                                     get_comment_time()
                                 )); 
@@ -51,14 +51,14 @@ function bs_media_comment($comment, $args, $depth) {
             </h4>
             <?php if ('0' == $comment->comment_approved) : ?>
               <p class="comment-awaiting-moderation">
-                <?php _e('Your comment is awaiting moderation.','sage'); ?>
+                <?php _e('Your comment is awaiting moderation.','bootstap-essentials'); ?>
               </p>
             <?php endif; ?>
             <?php comment_text(); ?>
             <p class="reply">
                 <?php comment_reply_link( array_merge($args, array(
-                            //'reply_text' => __('Reply <span>&darr;</span>', 'sage'),
-                            'reply_text' => __('Reply', 'sage'),
+                            //'reply_text' => __('Reply <span>&darr;</span>', 'bootstap-essentials'),
+                            'reply_text' => __('Reply', 'bootstap-essentials'),
                             'depth'      => $depth,
                             'max_depth'  => $args['max_depth']
                         )

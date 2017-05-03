@@ -7,6 +7,53 @@ Description: Basic Bootstrap theme with bootstrap essentials
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
-Text Domain: bse-wordpress
-Tags: simple, basic, efficient, fast, standard
+Text Domain: bootstap-essentials
+Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-colors, custom-background, featured-images, translation-ready, custom-header, flexible-header, custom-menu, footer-widgets
 */
+
+
+/* empty styles to please wordpress theme checker */
+
+.wp-caption {
+    /**/
+}
+
+.wp-caption-text {
+    /**/
+}
+
+.sticky {
+    /**/
+}
+
+.gallery-caption {
+    /**/
+}
+
+.bypostauthor {
+    /**/
+}
+
+
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+
+.alignleft {
+    float: left;
+    margin-right: 15px;
+}
+
+.alignright {
+    float: right;
+    margin-left: 15px;
+}
+
+.aligncenter {
+    clear: both;
+    display: block;
+    margin: 0 auto;
+}
+.screen-reader-text {
+  /**/
+}

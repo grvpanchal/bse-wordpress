@@ -29,13 +29,36 @@
     <?php wp_head(); ?>
   </head>
 
-  <body <?php body_class(cards_class( 'well b-0 m-xs-0 p-xs-0')); ?>>
-    <div id="page" class="site">
-      <!--<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'bse-wordpress' ); ?></a>-->
+  <?php
+          $navbar_margin = '';
+
+          if(get_option('navbar_position') == 'fixed')
+          {
+            $navbar_margin = 'mt-navbar-height';
+          }
+  ?>
+
+  <body <?php body_class(cards_class( 'well b-0 m-xs-0 p-xs-0 ') . ' ' . $navbar_margin); ?>>
+      <!--<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'bootstap-essentials' ); ?></a>-->
 
       <header id="masthead" class="site-header" role="banner">
-
-        <nav class="navbar navbar-inverse navbar-static-top navbar-slide-nav mb-xs-0" role="navigation">
+        <?php 
+        if(get_option('navbar_position') == 'default')
+        {
+          ?>
+        <div class="site-branding container">
+          <h1 class="site-title mb-xs-5"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="no-underline"><?php bloginfo( 'name' ); ?></a></h1>
+          <?php
+          $description = get_bloginfo( 'description', 'display' );
+          if ( $description || is_customize_preview() ) : ?>
+            <p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+          <?php
+          endif; ?>
+        </div><!-- .site-branding -->
+        <?php
+        }
+        ?>
+        <nav class="navbar navbar-<?php echo get_option('navbar_type')?> navbar-<?php echo get_option('navbar_position'); ?>-top navbar-slide-nav mb-xs-0" role="navigation">
           <div class="container">
             <div class="navbar-right-static ml-xs-0">
               <ul class="navbar-nav nav">
@@ -66,7 +89,7 @@
         'theme_location'    => 'primary',
         'depth'             => 2,
         'container'         => 'div',
-        'container_class'   => 'offcanvas navbar-slide navbar-right',
+        'container_class'   => 'offcanvas navbar-slide navbar-'.get_option('navbar_align'),
         'container_id'      => 'navbar',
         'menu_class'        => 'nav navbar-nav',
         'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
@@ -75,8 +98,8 @@
         ?>
           </div>
         </nav>
-
-        <div class="collapse" id="searchbox">
+        
+        <div class="collapse <?php echo $navbar_margin ?>" id="searchbox">
           <div class="well mb-xs-0 pb-xs-0">
             <?php get_search_form() ?>
           </div>
