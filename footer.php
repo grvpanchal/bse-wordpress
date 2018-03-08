@@ -14,7 +14,7 @@
 	<div class="container">
 		<p><a href="<?php echo esc_url( __( 'https://wordpress.org/', 'bootstap-essentials' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'bootstap-essentials' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'bootstap-essentials' ), 'bootstap-essentials', '<a href="https://automattic.com/" rel="designer">Gaurav Panchal</a>' ); ?>
+			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'bootstap-essentials' ), 'bootstap-essentials', '<a href="https://grvpanchal.me/" rel="designer">Gaurav Panchal</a>' ); ?>
 		</p>
 	</div>
 </footer><!-- #colophon -->

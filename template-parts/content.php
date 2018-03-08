@@ -9,7 +9,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(cards_class('panel panel-default panel-body mt-xs-20', 'pb-xs-20 mb-xs-0 bb')); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(cards_class('panel panel-default panel-body mt-xs-4', 'pb-xs-4 mb-xs-0 bb')); ?>>
 	<header class="entry-header">
 		<?php
 		if ( is_single() ) :
@@ -19,7 +19,7 @@
 		endif;
 
 		if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta text-right text-muted mb-xs-10">
+		<div class="entry-meta text-right text-muted mb-xs-2">
 			<small><?php bse_wordpress_posted_on(); ?></small>
 		</div><!-- .entry-meta -->
 		<?php
@@ -47,7 +47,7 @@
 			) );
 			?>
 			<div class="pull-right"><a href="<?php echo esc_url( get_permalink() ) ?>" class="btn btn-danger">Read More</a></div>
-			<div class="entry-footer mt-xs-20">
+			<div class="entry-footer mt-xs-4">
 				<?php bse_wordpress_entry_footer(); ?>
 			</div><!-- .entry-footer -->
 			<?php

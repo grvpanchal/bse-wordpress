@@ -44,7 +44,7 @@ function bse_wordpress_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'menu-1' => esc_html__( 'Primary', 'bootstap-essentials' ),
+		'Navbar' => esc_html__( 'navbar', 'bootstap-essentials' ),
 	) );
 
 	/*
@@ -198,8 +198,8 @@ function remove_p_on_pages() {
 add_action( 'wp_head', 'remove_p_on_pages' );
 
 function theme_styles() {
-	wp_enqueue_style( 'bs', 'https://cdn.rawgit.com/grvpanchal/bse-theme-compiler/e86d8e2f/dist/themes/'. get_option('style_option') . '/css/'. get_option('style_option') .'-bootstrap.min.css');
-	wp_enqueue_style( 'bse', 'https://cdn.rawgit.com/grvpanchal/bse-theme-compiler/e86d8e2f/dist/themes/'. get_option('style_option') .'/css/'. get_option('style_option') .'-bootstrap-essentials.min.css');
+	wp_enqueue_style( 'bs', 'http://themes.bootstrapessentials.com/dist/themes/'. get_option('style_option') . '/css/'. get_option('style_option') .'-bootstrap.min.css');
+	wp_enqueue_style( 'bse', 'http://themes.bootstrapessentials.com/dist/themes/'. get_option('style_option') .'/css/'. get_option('style_option') .'-bootstrap-essentials.min.css');
 }
 
 add_action( 'wp_enqueue_scripts', 'theme_styles' );

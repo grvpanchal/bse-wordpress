@@ -20,14 +20,14 @@ function bootstrap3_comment_form_fields( $fields ) {
 
 add_filter( 'comment_form_defaults', 'bootstrap3_comment_form' );
 function bootstrap3_comment_form( $args ) {
-    $args['title_reply_before'] = '<h4 id="reply-title" class="comment-reply-title mt-xs-20">';
+    $args['title_reply_before'] = '<h4 id="reply-title" class="comment-reply-title mt-xs-4">';
     $args['title_reply'] = 'Submit a Comment';
     $args['title_reply_after'] = '</h4>';
     $args['comment_field'] = '<div class="col-xs-12"><div class="form-group comment-form-comment">
             <label for="comment">' . _x( 'Comment', 'noun' ) . '</label> 
             <textarea class="form-control" id="comment" name="comment" cols="45" rows="6" aria-required="true"></textarea>
         </div></div>';
-    $args['class_submit'] = 'btn btn-default mr-xs-15 ml-xs-15'; // since WP 4.1
+    $args['class_submit'] = 'btn btn-default mr-xs-3 ml-xs-3'; // since WP 4.1
     
     return $args;
 }

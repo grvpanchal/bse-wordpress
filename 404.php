@@ -16,7 +16,7 @@ get_header(); ?>
 				<header class="text-center">
 					<h1><span class="fs-xs-3-2 text-danger">404</span></h1>
 					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'bootstap-essentials' ); ?></h1>
-					<a class="btn btn-danger btn-lg mb-xs-20" href="/">Go Home</a>
+					<a class="btn btn-danger btn-lg mb-xs-4" href="/">Go Home</a>
 				</header><!-- .page-header -->
 			</section><!-- .error-404 -->
 

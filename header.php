@@ -19,7 +19,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css' />
-    <link rel='stylesheet' href='https://cdn.rawgit.com/grvpanchal/bootstrap-essentials/v0.4.0/dist/css/bootstrap-essentials.min.css' />
+    <link rel='stylesheet' href='https://cdn.rawgit.com/grvpanchal/bootstrap-essentials/v0.6.0/dist/css/bootstrap-essentials.min.css' />
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -47,7 +47,7 @@
         {
           ?>
         <div class="site-branding container">
-          <h1 class="site-title mb-xs-5"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="no-underline"><?php bloginfo( 'name' ); ?></a></h1>
+          <h1 class="site-title mb-xs-1"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="no-underline"><?php bloginfo( 'name' ); ?></a></h1>
           <?php
           $description = get_bloginfo( 'description', 'display' );
           if ( $description || is_customize_preview() ) : ?>
@@ -85,8 +85,8 @@
 
             <?php
         wp_nav_menu( array(
-        'menu'              => 'primary',
-        'theme_location'    => 'primary',
+        'menu'              => 'navbar',
+        'theme_location'    => 'navbar',
         'depth'             => 2,
         'container'         => 'div',
         'container_class'   => 'offcanvas navbar-slide navbar-'.get_option('navbar_align'),
@@ -101,7 +101,9 @@
         
         <div class="collapse <?php echo $navbar_margin ?>" id="searchbox">
           <div class="well mb-xs-0 pb-xs-0">
-            <?php get_search_form() ?>
+            <div class="container p-xs-0">
+              <?php get_search_form() ?>
+            </div>
           </div>
         </div>
       </header>

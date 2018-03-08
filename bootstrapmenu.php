@@ -24,6 +24,7 @@ function display_style_option()
       <option value="spacelab" <?php echo (get_option( 'style_option')=='spacelab' ? 'selected' : ''); ?>>spacelab</option>
       <option value="superhero" <?php echo (get_option( 'style_option')=='superhero' ? 'selected' : ''); ?>>superhero</option>
       <option value="slate" <?php echo (get_option( 'style_option')=='slate' ? 'selected' : ''); ?>>slate</option>
+      <option value="stimulus" <?php echo (get_option( 'style_option')=='stimulus' ? 'selected' : ''); ?>>stimulus</option>
       <option value="united" <?php echo (get_option( 'style_option')=='united' ? 'selected' : ''); ?>>united</option>
       <option value="yeti" <?php echo (get_option( 'style_option')=='yeti' ? 'selected' : ''); ?>>yeti</option>
     </select>
