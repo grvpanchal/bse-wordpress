@@ -20,9 +20,9 @@ function bse_wordpress_setup() {
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
 	 * If you're building a theme based on Bootstap Essentials, use a find and replace
-	 * to change 'bootstap-essentials' to the name of your theme in all the template files.
+	 * to change 'bootstrap-essentials' to the name of your theme in all the template files.
 	 */
-	load_theme_textdomain( 'bootstap-essentials', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'bootstrap-essentials', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -44,7 +44,7 @@ function bse_wordpress_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'Navbar' => esc_html__( 'navbar', 'bootstap-essentials' ),
+		'Navbar' => esc_html__( 'navbar', 'bootstrap-essentials' ),
 	) );
 
 	/*
@@ -92,9 +92,9 @@ add_action( 'after_setup_theme', 'bse_wordpress_content_width', 0 );
  */
 function bse_wordpress_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'bootstap-essentials' ),
+		'name'          => esc_html__( 'Sidebar', 'bootstrap-essentials' ),
 		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'bootstap-essentials' ),
+		'description'   => esc_html__( 'Add widgets here.', 'bootstrap-essentials' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h4 class="widget-title">',
@@ -115,11 +115,11 @@ add_action( 'admin_init', 'wpdocs_theme_add_editor_styles' );
  * Enqueue scripts and styles.
  */
 function bse_wordpress_scripts() {
-	wp_enqueue_style( 'bootstap-essentials-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'bootstrap-essentials-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'bootstap-essentials-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_script( 'bootstrap-essentials-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
-	wp_enqueue_script( 'bootstap-essentials-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script( 'bootstrap-essentials-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

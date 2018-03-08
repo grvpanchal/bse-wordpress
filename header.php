@@ -42,7 +42,7 @@
   ?>
 
   <body <?php body_class(cards_class( 'well b-0 m-xs-0 p-xs-0 ') . ' ' . $navbar_margin); ?>>
-      <!--<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'bootstap-essentials' ); ?></a>-->
+      <!--<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'bootstrap-essentials' ); ?></a>-->
 
       <header id="masthead" class="site-header" role="banner">
         <?php 
