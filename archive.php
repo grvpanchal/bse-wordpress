@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Bootstap_Essentials
+ * @package Bootstrap_Essentials
  */
 
 get_header(); ?>

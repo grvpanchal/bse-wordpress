@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package Bootstap_Essentials
+ * @package Bootstrap_Essentials
  */
 
 if ( ! function_exists( 'bse_wordpress_setup' ) ) :

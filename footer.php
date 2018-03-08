@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Bootstap_Essentials
+ * @package Bootstrap_Essentials
  */
 
 $footer_type = get_option('footer_type') == '' ? 'navbar-inverse' : get_option('footer_type');

@@ -4,7 +4,7 @@
  *
  * @link https://jetpack.com/
  *
- * @package Bootstap_Essentials
+ * @package Bootstrap_Essentials
  */
 
 /**

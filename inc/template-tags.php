@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package Bootstap_Essentials
+ * @package Bootstrap_Essentials
  */
 
 if ( ! function_exists( 'bse_wordpress_posted_on' ) ) :

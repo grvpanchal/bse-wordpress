@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
  *
- * @package Bootstap_Essentials
+ * @package Bootstrap_Essentials
  */
 
 get_header(); ?>

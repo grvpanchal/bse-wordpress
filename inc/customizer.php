@@ -2,7 +2,7 @@
 /**
  * Bootstap Essentials Theme Customizer
  *
- * @package Bootstap_Essentials
+ * @package Bootstrap_Essentials
  */
 
 /**
