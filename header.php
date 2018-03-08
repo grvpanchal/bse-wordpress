@@ -31,8 +31,11 @@
 
   <?php
           $navbar_margin = '';
-
-          if(get_option('navbar_position') == 'fixed')
+          $navbar_position = get_option('navbar_position') == '' ? 'static' : get_option('navbar_position');
+          $navbar_type = get_option('navbar_type') == '' ? 'default' : get_option('navbar_type');
+          $navbar_align = get_option('navbar_align') == '' ? 'right' : get_option('navbar_align');
+          
+          if($navbar_position == 'fixed')
           {
             $navbar_margin = 'mt-navbar-height';
           }
@@ -43,7 +46,7 @@
 
       <header id="masthead" class="site-header" role="banner">
         <?php 
-        if(get_option('navbar_position') == 'default')
+        if($navbar_position == 'default')
         {
           ?>
         <div class="site-branding container">
@@ -58,7 +61,7 @@
         <?php
         }
         ?>
-        <nav class="navbar navbar-<?php echo get_option('navbar_type')?> navbar-<?php echo get_option('navbar_position'); ?>-top navbar-slide-nav mb-xs-0" role="navigation">
+        <nav class="navbar navbar-<?php echo $navbar_type; ?> navbar-<?php echo $navbar_position; ?>-top navbar-slide-nav mb-xs-0" role="navigation">
           <div class="container">
             <div class="navbar-right-static ml-xs-0">
               <ul class="navbar-nav nav">
@@ -89,7 +92,7 @@
         'theme_location'    => 'navbar',
         'depth'             => 2,
         'container'         => 'div',
-        'container_class'   => 'offcanvas navbar-slide navbar-'.get_option('navbar_align'),
+        'container_class'   => 'offcanvas navbar-slide navbar-'.$navbar_align,
         'container_id'      => 'navbar',
         'menu_class'        => 'nav navbar-nav',
         'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',

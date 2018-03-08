@@ -52,10 +52,15 @@
 			</div><!-- .entry-footer -->
 			<?php
 		endif;
+
+		if(function_exists('wp_link_pages')) :
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'bootstap-essentials' ),
 				'after'  => '</div>',
 			) );
+		else :
+			the_posts_navigation();
+		endif;
 		?>
 	</div><!-- .entry-content -->
 

@@ -26,7 +26,7 @@ if ( post_password_required() ) {
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) : ?>
 		<h4 class="comments-title">
-			Comments  <span class="badge">
+			<?php echo esc_html__( 'Comments', 'bootstap-essentials' ); ?>  <span class="badge">
 			<?php
 				echo get_comments_number()
 			?>

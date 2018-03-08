@@ -9,8 +9,10 @@
  * @package Bootstap_Essentials
  */
 
+$footer_type = get_option('footer_type') == '' ? 'navbar-inverse' : get_option('footer_type');
+
 ?>
-<footer id="colophon" class="footer <?php echo get_option('footer_type')?>" role="contentinfo">
+<footer id="colophon" class="footer <?php echo $footer_type; ?>" role="contentinfo">
 	<div class="container">
 		<p><a href="<?php echo esc_url( __( 'https://wordpress.org/', 'bootstap-essentials' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'bootstap-essentials' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>

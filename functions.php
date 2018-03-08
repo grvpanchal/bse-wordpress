@@ -104,6 +104,14 @@ function bse_wordpress_widgets_init() {
 add_action( 'widgets_init', 'bse_wordpress_widgets_init' );
 
 /**
+ * Registers an editor stylesheet for the theme.
+ */
+function wpdocs_theme_add_editor_styles() {
+    add_editor_style( 'custom-editor-style.css' );
+}
+add_action( 'admin_init', 'wpdocs_theme_add_editor_styles' );
+
+/**
  * Enqueue scripts and styles.
  */
 function bse_wordpress_scripts() {
@@ -126,6 +134,7 @@ add_action( 'wp_enqueue_scripts', 'bse_wordpress_scripts' );
     return '...';
 }
 add_filter('excerpt_more', 'new_excerpt_more');
+
 /**
  * Sidebar Class.
  */
