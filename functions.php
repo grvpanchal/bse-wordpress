@@ -1,6 +1,6 @@
 <?php
 /**
- * Bootstap Essentials functions and definitions
+ * Bootstrap Essentials functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
@@ -19,7 +19,7 @@ function bse_wordpress_setup() {
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on Bootstap Essentials, use a find and replace
+	 * If you're building a theme based on Bootstrap Essentials, use a find and replace
 	 * to change 'bootstrap-essentials' to the name of your theme in all the template files.
 	 */
 	load_theme_textdomain( 'bootstrap-essentials', get_template_directory() . '/languages' );

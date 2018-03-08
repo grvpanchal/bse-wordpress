@@ -1,6 +1,6 @@
 <?php
 /**
- * Bootstap Essentials Theme Customizer
+ * Bootstrap Essentials Theme Customizer
  *
  * @package Bootstrap_Essentials
  */
