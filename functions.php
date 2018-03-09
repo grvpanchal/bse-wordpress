@@ -6,7 +6,7 @@
  *
  * @package Bootstrap_Essentials
  */
-
+	
 if ( ! function_exists( 'bse_wordpress_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -207,9 +207,21 @@ function remove_p_on_pages() {
 add_action( 'wp_head', 'remove_p_on_pages' );
 
 function theme_styles() {
-	wp_enqueue_style( 'bs', 'http://themes.bootstrapessentials.com/dist/themes/'. get_option('style_option') . '/css/'. get_option('style_option') .'-bootstrap.min.css');
-	wp_enqueue_style( 'bse', 'http://themes.bootstrapessentials.com/dist/themes/'. get_option('style_option') .'/css/'. get_option('style_option') .'-bootstrap-essentials.min.css');
+	wp_enqueue_style( 'bs', 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css');
+	wp_enqueue_style( 'bse', 'https://cdn.rawgit.com/grvpanchal/bootstrap-essentials/v0.6.0/dist/css/bootstrap-essentials.min.css');
+	wp_enqueue_style( 'bs-theme', 'http://themes.bootstrapessentials.com/dist/themes/'. get_option('style_option') . '/css/'. get_option('style_option') .'-bootstrap.min.css');
+	wp_enqueue_style( 'bse-theme', 'http://themes.bootstrapessentials.com/dist/themes/'. get_option('style_option') .'/css/'. get_option('style_option') .'-bootstrap-essentials.min.css');
+	wp_enqueue_style( 'html5shiv', "https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js", array( 'bs' ) );
+	wp_style_add_data( 'html5shiv', 'conditional', 'lt IE 9' );
+	wp_enqueue_style( 'respond', "https://oss.maxcdn.com/respond/1.4.2/respond.min.js", array( 'bs' ) );
+	wp_style_add_data( 'respond', 'conditional', 'lt IE 9' );
+}
+
+function theme_scripts() {
+	wp_enqueue_script('jquery2', 'https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js', array(), null, true);
+	wp_enqueue_script('bs', 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js', array('jquery2'), null, true);
+	wp_enqueue_script('bse', 'https://cdn.rawgit.com/grvpanchal/bootstrap-essentials/v0.6.0/dist/js/bootstrap-essentials.min.js', array('jquery2'), null, true);
 }
 
 add_action( 'wp_enqueue_scripts', 'theme_styles' );
-
+add_action( 'wp_enqueue_scripts', 'theme_scripts' );

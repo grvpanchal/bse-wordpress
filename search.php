@@ -8,14 +8,16 @@
  */
 
 get_header(); ?>
-	<div class="<?php echo sidebar_class('container') ?>">
-	<main id="main" class="page page-main <?php echo sidebar_class('fixed-width-right') ?>" role="main">
-		<div id="content" class="<?php echo sidebar_class('page-content pr-sm-4') ?><?php echo not_sidebar_class('container') ?>">
+	<div class="<?php echo esc_attr(sidebar_class('container')); ?>">
+	<main id="main" class="page page-main <?php echo esc_attr(sidebar_class('fixed-width-right')); ?>" role="main">
+		<div id="content" class="<?php echo esc_attr(sidebar_class('page-content pr-sm-4')); ?><?php echo esc_attr(not_sidebar_class('container')); ?>">
 		<?php
 		if ( have_posts() ) : ?>
 
 			<header class="page-header">
-				<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'bootstrap-essentials' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+				<h1 class="page-title"><?php 
+				/* translators: %s: search query. */
+				printf( esc_html__( 'Search Results for: %s', 'bootstrap-essentials' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 			</header><!-- .page-header -->
 
 			<?php

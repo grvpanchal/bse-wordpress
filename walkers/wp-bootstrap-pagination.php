@@ -11,10 +11,10 @@ function wp_bootstrap_pagination( $args = array() ) {
         'next_string'     => __( '&rsaquo;', 'bootstrap-essentials' ),
         'first_string'    => __( '&laquo;', 'bootstrap-essentials' ),
         'last_string'     => __( '&raquo;', 'bootstrap-essentials' ),
-        'before_output'   => '<div class="post-nav"><ul class="pagination">',
+        'before_output'   => '<div class="post-nav text-center"><ul class="pagination">',
         'after_output'    => '</ul></div>'
     );
-    
+    $allowed_html = shapeSpace_allowed_html();
     $args = wp_parse_args( 
         $args, 
         apply_filters( 'wp_bootstrap_pagination_defaults', $defaults )
@@ -22,7 +22,7 @@ function wp_bootstrap_pagination( $args = array() ) {
     
     $args['range'] = (int) $args['range'] - 1;
     if ( !$args['custom_query'] )
-        $args['custom_query'] = @$GLOBALS['wp_query'];
+        $args['custom_query'] = $GLOBALS['wp_query'];
     $count = (int) $args['custom_query']->max_num_pages;
     $page  = intval( get_query_var( 'paged' ) );
     $ceil  = ceil( $args['range'] / 2 );
@@ -79,7 +79,7 @@ function wp_bootstrap_pagination( $args = array() ) {
         $echo .= '<li class="next"><a href="' . $lastpage . '">' . $args['last_string'] . '</a></li>';
     }
     if ( isset($echo) )
-        echo $args['before_output'] . $echo . $args['after_output'];
+        echo wp_kses($args['before_output'] . $echo . $args['after_output'], $allowed_html);
 }
 
 function wp_bootstrap_pager()
@@ -92,14 +92,14 @@ function wp_bootstrap_pager()
         'before_output'   => '<div class="post-nav"><ul class="pager">',
         'after_output'    => '</ul></div>'
     );
-    
+    $allowed_html = shapeSpace_allowed_html();
     $args = wp_parse_args( 
         $args, 
         apply_filters( 'wp_bootstrap_pagination_defaults', $defaults )
     );
         $args['range'] = (int) $args['range'] - 1;
     if ( !$args['custom_query'] )
-        $args['custom_query'] = @$GLOBALS['wp_query'];
+        $args['custom_query'] = $GLOBALS['wp_query'];
     $count = (int) $args['custom_query']->max_num_pages;
     $page  = intval( get_query_var( 'paged' ) );
     $ceil  = ceil( $args['range'] / 2 );
@@ -140,5 +140,5 @@ function wp_bootstrap_pager()
         $echo .= '<li class="next"><a href="' . $next . '" title="' . __( 'next', 'bootstrap-essentials') . '">' . $args['next_string'] . '</a></li>';
 
     if ( isset($echo) )
-        echo $args['before_output'] . $echo . $args['after_output'];
+        echo wp_kses($args['before_output'] . $echo . $args['after_output'], $allowed_html);
 }

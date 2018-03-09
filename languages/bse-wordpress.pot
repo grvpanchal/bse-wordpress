@@ -215,10 +215,10 @@ msgstr ""
 
 #. Author of the plugin/theme
 #@ _s
-msgid "Automattic"
+msgid "Gaurav Panchal"
 msgstr ""
 
 #. Author URI of the plugin/theme
 #@ _s
-msgid "http://automattic.com/"
+msgid "http://grvpanchal.me/"
 msgstr ""

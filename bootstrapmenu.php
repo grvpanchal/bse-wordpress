@@ -4,31 +4,31 @@ function display_style_option()
     ?>
     
     <select name="style_option" id="style_option">
-      <option value="default" <?php echo (get_option( 'style_option')=='default' ? 'selected' : ''); ?>>default</option>
-      <option value="cerulean" <?php echo (get_option( 'style_option')=='cerulean' ? 'selected' : ''); ?>>cerulean</option>
-      <option value="cosmo" <?php echo (get_option( 'style_option')=='cosmo' ? 'selected' : ''); ?>>cosmo</option>
-      <option value="cyborg" <?php echo (get_option( 'style_option')=='cyborg' ? 'selected' : ''); ?>>cyborg</option>
-      <option value="darkly" <?php echo (get_option( 'style_option')=='darkly' ? 'selected' : ''); ?>>darkly</option>
-      <option value="flatly" <?php echo (get_option( 'style_option')=='flatly' ? 'selected' : ''); ?>>flatly</option>
-      <option value="green-apple" <?php echo (get_option( 'style_option')=='green-apple' ? 'selected' : ''); ?>>green-apple</option>
-      <option value="journal" <?php echo (get_option( 'style_option')=='journal' ? 'selected' : ''); ?>>journal</option>
-      <option value="lumen" <?php echo (get_option( 'style_option')=='lumen' ? 'selected' : ''); ?>>lumen</option>
-      <option value="newcity" <?php echo (get_option( 'style_option')=='newcity' ? 'selected' : ''); ?>>newcity</option>
-      <option value="paper" <?php echo (get_option( 'style_option')=='paper' ? 'selected' : ''); ?>>paper</option>
-      <option value="power" <?php echo (get_option( 'style_option')=='power' ? 'selected' : ''); ?>>power</option>
-      <option value="readable" <?php echo (get_option( 'style_option')=='readable' ? 'selected' : ''); ?>>readable</option>
-      <option value="sandstone" <?php echo (get_option( 'style_option')=='sandstone' ? 'selected' : ''); ?>>sandstone</option>
-      <option value="simplex" <?php echo (get_option( 'style_option')=='simplex' ? 'selected' : ''); ?>>simplex</option>
-      <option value="so-orange-inside" <?php echo (get_option( 'style_option')=='so-orange-inside' ? 'selected' : ''); ?>>so-orange-inside</option>
-      <option value="solar" <?php echo (get_option( 'style_option')=='solar' ? 'selected' : ''); ?>>solar</option>
-      <option value="spacelab" <?php echo (get_option( 'style_option')=='spacelab' ? 'selected' : ''); ?>>spacelab</option>
-      <option value="superhero" <?php echo (get_option( 'style_option')=='superhero' ? 'selected' : ''); ?>>superhero</option>
-      <option value="slate" <?php echo (get_option( 'style_option')=='slate' ? 'selected' : ''); ?>>slate</option>
-      <option value="stimulus" <?php echo (get_option( 'style_option')=='stimulus' ? 'selected' : ''); ?>>stimulus</option>
-      <option value="united" <?php echo (get_option( 'style_option')=='united' ? 'selected' : ''); ?>>united</option>
-      <option value="yeti" <?php echo (get_option( 'style_option')=='yeti' ? 'selected' : ''); ?>>yeti</option>
+      <option value="default" <?php echo esc_attr(get_option( 'style_option')=='default' ? 'selected' : ''); ?>>default</option>
+      <option value="cerulean" <?php echo esc_attr(get_option( 'style_option')=='cerulean' ? 'selected' : ''); ?>>cerulean</option>
+      <option value="cosmo" <?php echo esc_attr(get_option( 'style_option')=='cosmo' ? 'selected' : ''); ?>>cosmo</option>
+      <option value="cyborg" <?php echo esc_attr(get_option( 'style_option')=='cyborg' ? 'selected' : ''); ?>>cyborg</option>
+      <option value="darkly" <?php echo esc_attr(get_option( 'style_option')=='darkly' ? 'selected' : ''); ?>>darkly</option>
+      <option value="flatly" <?php echo esc_attr(get_option( 'style_option')=='flatly' ? 'selected' : ''); ?>>flatly</option>
+      <option value="green-apple" <?php echo esc_attr(get_option( 'style_option')=='green-apple' ? 'selected' : ''); ?>>green-apple</option>
+      <option value="journal" <?php echo esc_attr(get_option( 'style_option')=='journal' ? 'selected' : ''); ?>>journal</option>
+      <option value="lumen" <?php echo esc_attr(get_option( 'style_option')=='lumen' ? 'selected' : ''); ?>>lumen</option>
+      <option value="newcity" <?php echo esc_attr(get_option( 'style_option')=='newcity' ? 'selected' : ''); ?>>newcity</option>
+      <option value="paper" <?php echo esc_attr(get_option( 'style_option')=='paper' ? 'selected' : ''); ?>>paper</option>
+      <option value="power" <?php echo esc_attr(get_option( 'style_option')=='power' ? 'selected' : ''); ?>>power</option>
+      <option value="readable" <?php echo esc_attr(get_option( 'style_option')=='readable' ? 'selected' : ''); ?>>readable</option>
+      <option value="sandstone" <?php echo esc_attr(get_option( 'style_option')=='sandstone' ? 'selected' : ''); ?>>sandstone</option>
+      <option value="simplex" <?php echo esc_attr(get_option( 'style_option')=='simplex' ? 'selected' : ''); ?>>simplex</option>
+      <option value="so-orange-inside" <?php echo esc_attr(get_option( 'style_option')=='so-orange-inside' ? 'selected' : ''); ?>>so-orange-inside</option>
+      <option value="solar" <?php echo esc_attr(get_option( 'style_option')=='solar' ? 'selected' : ''); ?>>solar</option>
+      <option value="spacelab" <?php echo esc_attr(get_option( 'style_option')=='spacelab' ? 'selected' : ''); ?>>spacelab</option>
+      <option value="superhero" <?php echo esc_attr(get_option( 'style_option')=='superhero' ? 'selected' : ''); ?>>superhero</option>
+      <option value="slate" <?php echo esc_attr(get_option( 'style_option')=='slate' ? 'selected' : ''); ?>>slate</option>
+      <option value="stimulus" <?php echo esc_attr(get_option( 'style_option')=='stimulus' ? 'selected' : ''); ?>>stimulus</option>
+      <option value="united" <?php echo esc_attr(get_option( 'style_option')=='united' ? 'selected' : ''); ?>>united</option>
+      <option value="yeti" <?php echo esc_attr(get_option( 'style_option')=='yeti' ? 'selected' : ''); ?>>yeti</option>
     </select>
-    The current theme is <?php echo get_option( 'style_option') ?>
+    The current theme is <?php echo esc_attr(get_option( 'style_option')); ?>
     <?php
 }
 
@@ -36,8 +36,8 @@ function display_navbar_type()
 {
     ?>
     <select type="text" name="navbar_type" id="navbar_type">
-      <option value="default" <?php echo (get_option( 'navbar_type')=='default' ? 'selected' : ''); ?>>default</option>
-      <option value="inverse" <?php echo (get_option( 'navbar_type')=='inverse' ? 'selected' : ''); ?>>inverse</option>
+      <option value="default" <?php echo esc_attr(get_option( 'navbar_type')=='default' ? 'selected' : ''); ?>>default</option>
+      <option value="inverse" <?php echo esc_attr(get_option( 'navbar_type')=='inverse' ? 'selected' : ''); ?>>inverse</option>
     </select>
     <?php
 }
@@ -46,8 +46,8 @@ function display_navbar_position()
 {
     ?>
   <select name="navbar_position" id="navbar_position">
-    <option value="static" <?php echo (get_option( 'navbar_position')=='static' ? 'selected' : ''); ?>>Static</option>
-    <option value="fixed" <?php echo (get_option( 'navbar_position')=='fixed' ? 'selected' : ''); ?>>Fixed</option>
+    <option value="static" <?php echo esc_attr(get_option( 'navbar_position')=='static' ? 'selected' : ''); ?>>Static</option>
+    <option value="fixed" <?php echo esc_attr(get_option( 'navbar_position')=='fixed' ? 'selected' : ''); ?>>Fixed</option>
   </select>
   <?php
 }
@@ -56,8 +56,8 @@ function display_navbar_align()
 {
     ?>
     <select type="text" name="navbar_align" id="navbar_align">
-      <option value="right" <?php echo (get_option( 'navbar_align')=='right' ? 'selected' : ''); ?>>Right</option>
-      <option value="left" <?php echo (get_option( 'navbar_align')=='left' ? 'selected' : ''); ?>>Left</option>
+      <option value="right" <?php echo esc_attr(get_option( 'navbar_align')=='right' ? 'selected' : ''); ?>>Right</option>
+      <option value="left" <?php echo esc_attr(get_option( 'navbar_align')=='left' ? 'selected' : ''); ?>>Left</option>
     </select>
     <?php
 }
@@ -66,9 +66,9 @@ function display_footer_type()
 {
     ?>
     <select type="text" name="footer_type" id="footer_type">
-      <option value="navbar-default" <?php echo (get_option( 'footer_type')=='navbar-default' ? 'selected' : ''); ?>>Default</option>
-      <option value="navbar-inverse" <?php echo (get_option( 'footer_type')=='navbar-inverse' ? 'selected' : ''); ?>>Inverse</option>
-      <option value="bg-primary" <?php echo (get_option( 'footer_type')=='bg-primary' ? 'selected' : ''); ?>>Primary</option>
+      <option value="navbar-default" <?php echo esc_attr(get_option( 'footer_type')=='navbar-default' ? 'selected' : ''); ?>>Default</option>
+      <option value="navbar-inverse" <?php echo esc_attr(get_option( 'footer_type')=='navbar-inverse' ? 'selected' : ''); ?>>Inverse</option>
+      <option value="bg-primary" <?php echo esc_attr(get_option( 'footer_type')=='bg-primary' ? 'selected' : ''); ?>>Primary</option>
     </select>
     <?php
 }
@@ -76,7 +76,7 @@ function display_footer_type()
 function display_blog_panel()
 {
     ?>
-    <input type="checkbox" value="1" name="blog_panel" id="blog_panel" <?php echo (get_option( 'blog_panel')=='1' ? 'checked' : ''); ?>/>
+    <input type="checkbox" value="1" name="blog_panel" id="blog_panel" <?php echo esc_attr(get_option( 'blog_panel')=='1' ? 'checked' : ''); ?>/>
     <?php
 }
 

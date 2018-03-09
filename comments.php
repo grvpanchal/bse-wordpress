@@ -20,7 +20,7 @@ if ( post_password_required() ) {
 }
 ?>
 
-<div id="comments" class="comments-area <?php echo cards_class('panel panel-default panel-body'); ?>">
+<div id="comments" class="comments-area <?php echo esc_attr(cards_class('panel panel-default panel-body')); ?>">
 
 	<?php
 	// You can start editing here -- including this comment!
@@ -28,7 +28,7 @@ if ( post_password_required() ) {
 		<h4 class="comments-title">
 			<?php echo esc_html__( 'Comments', 'bootstrap-essentials' ); ?>  <span class="badge">
 			<?php
-				echo get_comments_number()
+				echo esc_attr(get_comments_number());
 			?>
 			</span>
 		</h4><!-- .comments-title -->

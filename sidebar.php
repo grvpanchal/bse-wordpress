@@ -13,7 +13,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 ?>
 
 <aside id="secondary" class="widget-area page-sidebar" role="complementary">
-    <div class="mt-xs-4 <?php echo cards_class('panel panel-default panel-body'); ?>">
+    <div class="mt-xs-4 <?php echo esc_attr(cards_class('panel panel-default panel-body')); ?>">
 	<?php if(function_exists('dynamic_sidebar')) {
 
     ob_start();
@@ -27,8 +27,9 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
     $sidebar_corrected_ul = str_replace('<li class="recentcomments">', '<li class="list-group-item">', $sidebar_corrected_ul);
     $sidebar_corrected_ul = str_replace('<li class="cat-item', '<li class="list-group-item cat-item', $sidebar_corrected_ul);
     $sidebar_corrected_ul = str_replace("<li>", '<li class="list-group-item">', $sidebar_corrected_ul);
-
-    echo $sidebar_corrected_ul;
+    
+    $allowed_html = shapeSpace_allowed_html();
+    echo wp_kses($sidebar_corrected_ul, $allowed_html);
     } 
     
   ?>

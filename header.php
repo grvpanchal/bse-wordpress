@@ -18,14 +18,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="http://gmpg.org/xfn/11">
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css' />
-    <link rel='stylesheet' href='https://cdn.rawgit.com/grvpanchal/bootstrap-essentials/v0.6.0/dist/css/bootstrap-essentials.min.css' />
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
     <?php wp_head(); ?>
   </head>
 
@@ -41,7 +33,7 @@
           }
   ?>
 
-  <body <?php body_class(cards_class( 'well b-0 m-xs-0 p-xs-0 ') . ' ' . $navbar_margin); ?>>
+  <body <?php echo esc_attr(body_class(cards_class( 'well b-0 m-xs-0 p-xs-0 ') . ' ' . $navbar_margin)); ?>>
       <!--<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'bootstrap-essentials' ); ?></a>-->
 
       <header id="masthead" class="site-header" role="banner">
@@ -61,7 +53,7 @@
         <?php
         }
         ?>
-        <nav class="navbar navbar-<?php echo $navbar_type; ?> navbar-<?php echo $navbar_position; ?>-top navbar-slide-nav mb-xs-0" role="navigation">
+        <nav class="navbar navbar-<?php echo esc_attr($navbar_type); ?> navbar-<?php echo esc_attr($navbar_position); ?>-top navbar-slide-nav mb-xs-0" role="navigation">
           <div class="container">
             <div class="navbar-right-static ml-xs-0">
               <ul class="navbar-nav nav">
@@ -92,7 +84,7 @@
         'theme_location'    => 'navbar',
         'depth'             => 2,
         'container'         => 'div',
-        'container_class'   => 'offcanvas navbar-slide navbar-'.$navbar_align,
+        'container_class'   => 'offcanvas navbar-slide navbar-'. esc_attr($navbar_align),
         'container_id'      => 'navbar',
         'menu_class'        => 'nav navbar-nav',
         'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
@@ -102,7 +94,7 @@
           </div>
         </nav>
         
-        <div class="collapse <?php echo $navbar_margin ?>" id="searchbox">
+        <div class="collapse <?php echo esc_attr($navbar_margin); ?>" id="searchbox">
           <div class="well mb-xs-0 pb-xs-0">
             <div class="container p-xs-0">
               <?php get_search_form() ?>
