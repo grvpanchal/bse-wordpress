@@ -10,7 +10,7 @@
 get_header(); ?>
 
 	<div class="<?php echo esc_attr(sidebar_class('container')); ?>">
-	<main id="main" class="page page-main <?php echo esc_attr(sidebar_class('fixed-width-right')): ?>" role="main">
+	<main id="main" class="page page-main <?php echo esc_attr(sidebar_class('fixed-width-right')); ?>" role="main">
 		<div id="content" class="<?php echo esc_attr(sidebar_class('page-content pr-sm-4')); ?><?php echo esc_attr(not_sidebar_class('container')); ?>">
 		<?php
 		if ( have_posts() ) : ?>

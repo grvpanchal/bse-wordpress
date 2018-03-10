@@ -20,8 +20,9 @@ $footer_type = get_option('footer_type') == '' ? 'navbar-inverse' : get_option('
 		printf( esc_html__( 'Proudly powered by %s', 'bootstrap-essentials' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>
 			<?php 
+			$my_theme = wp_get_theme();
 			/* translators: 1: Theme name, 2: Theme author. */
-			printf( esc_html('Theme: %1$s by %2$s.', 'bootstrap-essentials'), 'Bootstrap Essentials Wordpress Theme', '<a href="http://grvpanchal.me/" rel="designer">Gaurav Panchal</a>' ); ?>
+			printf( esc_html('Theme: %1$s by %2$s.', 'bootstrap-essentials'), 'Bootstrap Essentials Wordpress Theme', '<a href="' . esc_url($my_theme->get( 'AuthorURI' )) . '" rel="designer">Gaurav Panchal</a>' ); ?>
 		</p>
 	</div>
 </footer><!-- #colophon -->

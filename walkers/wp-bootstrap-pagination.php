@@ -82,8 +82,9 @@ function wp_bootstrap_pagination( $args = array() ) {
         echo wp_kses($args['before_output'] . $echo . $args['after_output'], $allowed_html);
 }
 
-function wp_bootstrap_pager()
+function wp_bootstrap_pager( $args = array() )
 {
+    $echo = '';
     $defaults = array(
         'range'           => 4,
         'custom_query'    => FALSE,

@@ -53,24 +53,26 @@ function bse_wordpress_entry_footer() {
 		$categories_list = get_the_category_list( esc_html__( ', ', 'bootstrap-essentials' ) );
 		if ( $categories_list && bse_wordpress_categorized_blog() ) {
 			/* translators: 1: list of categories. */
-			printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'bootstrap-essentials' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+			printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'bootstrap-essentials' ) . '</span><span class="sep mr-1 ml-1">|</span>', $categories_list ); // WPCS: XSS OK.
 		}
 
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'bootstrap-essentials' ) );
 		if ( $tags_list ) {
 			/* translators: 1: list of tags. */
-			printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'bootstrap-essentials' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+			printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'bootstrap-essentials' ) . '</span><span class="sep mr-1 ml-1">|</span>', $tags_list ); // WPCS: XSS OK.
 		}
 	}
 
 	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 		echo '<span class="comments-link">';
 		/* translators: %s: post title */
-		comments_popup_link( sprintf( wp_kses( __( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'bootstrap-essentials' ), array( 'span' => array( 'class' => array() ) ) ), get_the_title() ) );
-		echo '</span>';
+		comments_popup_link( sprintf( wp_kses( __( 'Leave a Comment<span class="screen-reader-text"> on %s</span> |', 'bootstrap-essentials' ), array( 'span' => array( 'class' => array() ) ) ), get_the_title() ) );
+		echo '</span><span class="sep mr-1 ml-1">|</span>';
 	}
-
+	?>
+	<i class="glyphicon glyphicon-pencil text-primary"></i> 
+	<?php
 	edit_post_link(
 		sprintf(
 			/* translators: %s: Name of current post */

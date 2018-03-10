@@ -80,8 +80,8 @@
 
             <?php
         wp_nav_menu( array(
-        'menu'              => 'navbar',
-        'theme_location'    => 'navbar',
+        'menu_id'           => 'primary-menu',
+        'theme_location'    => 'menu-1',
         'depth'             => 2,
         'container'         => 'div',
         'container_class'   => 'offcanvas navbar-slide navbar-'. esc_attr($navbar_align),
@@ -103,3 +103,12 @@
         </div>
       </header>
       <!-- #masthead -->
+      <div class="container">
+        <?php if ( get_header_image() ) : ?>
+            <div id="site-header">
+                <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+                    <img src="<?php header_image(); ?>" class="img-responsive" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
+                </a>
+            </div>
+        <?php endif; ?>
+      </div>

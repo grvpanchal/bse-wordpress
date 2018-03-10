@@ -30,6 +30,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
     
     $allowed_html = shapeSpace_allowed_html();
     echo wp_kses($sidebar_corrected_ul, $allowed_html);
+    // echo $sidebar_corrected_ul;
     } 
     
   ?>

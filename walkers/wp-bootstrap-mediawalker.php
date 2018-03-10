@@ -21,7 +21,7 @@ function bs_media_comment($comment, $args, $depth) {
     break;
     default:
       global $post; ?>
-      <li class="list-group-item"><div class="media">
+      <li class="list-group-item bl-0 br-0"><div class="media">
         <article>
           <div class="media-left hidden-xs">
               <a href="<?php echo esc_attr($comment->comment_author_url);?>" class="pull-left">
@@ -33,7 +33,7 @@ function bs_media_comment($comment, $args, $depth) {
             <?php printf('<span class="fn font-weight-bold">%1$s %2$s</span>',
                   get_comment_author_link(),
                   // If current post author is also comment author, make it known visually.
-                  ($comment->user_id === $post->post_author) ? '<span class="label label-primary font-weight-normal fs-xs-0-6"> ' . esc_html_e(
+                  ($comment->user_id === $post->post_author) ? '<span class="label label-primary font-weight-normal fs-xs-0-6"> ' . esc_html(
                       'Post author',
                       'bootstrap-essentials'
                   ) . '</span> ' : ''); ?>

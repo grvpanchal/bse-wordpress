@@ -44,7 +44,7 @@ function bse_wordpress_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'Navbar' => esc_html__( 'navbar', 'bootstrap-essentials' ),
+		'menu-1' => esc_html__( 'Primary', 'bootstrap-essentials' ),
 	) );
 
 	/*
@@ -58,6 +58,11 @@ function bse_wordpress_setup() {
 		'gallery',
 		'caption',
 	) );
+
+	// Set up the WordPress core custom background feature.
+	add_theme_support( 'custom-background', apply_filters( 'test_theme_custom_background_args', array(
+		'default-image' => '',
+	) ) );
 
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
@@ -115,8 +120,7 @@ add_action( 'admin_init', 'wpdocs_theme_add_editor_styles' );
  * Enqueue scripts and styles.
  */
 function bse_wordpress_scripts() {
-	wp_enqueue_style( 'bootstrap-essentials-style', get_stylesheet_uri() );
-
+	
 	wp_enqueue_script( 'bootstrap-essentials-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'bootstrap-essentials-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
@@ -134,6 +138,18 @@ add_action( 'wp_enqueue_scripts', 'bse_wordpress_scripts' );
     return '...';
 }
 add_filter('excerpt_more', 'new_excerpt_more');
+
+/**
+* Wrap embed html with bootstrap responsive embed div
+*/
+function bootstrap_embed( $html, $url, $attr ) {
+	if ( ! is_admin() ) {
+		return "<div class=\"embed-responsive embed-responsive-16by9\">" . $html . "</div>";
+	} else {
+		return $html;
+	}
+}
+add_filter( 'embed_oembed_html', 'bootstrap_embed', 10, 3 );
 
 /**
  * Sidebar Class.
@@ -163,6 +179,11 @@ add_filter('excerpt_more', 'new_excerpt_more');
 		 return $else_class;
 	 }
  }
+
+/**
+ * Implement the Custom Header feature.
+ */
+require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
@@ -215,6 +236,8 @@ function theme_styles() {
 	wp_style_add_data( 'html5shiv', 'conditional', 'lt IE 9' );
 	wp_enqueue_style( 'respond', "https://oss.maxcdn.com/respond/1.4.2/respond.min.js", array( 'bs' ) );
 	wp_style_add_data( 'respond', 'conditional', 'lt IE 9' );
+	wp_enqueue_style( 'bootstrap-essentials-qp', get_template_directory_uri() . '/css/wordpress.css' );
+	wp_enqueue_style( 'bootstrap-essentials-style', get_stylesheet_uri() );
 }
 
 function theme_scripts() {

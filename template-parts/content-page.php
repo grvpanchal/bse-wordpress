@@ -12,6 +12,7 @@
 			
 		if ( get_edit_post_link() ) : ?>
 		<footer class="entry-footer">
+			<i class="glyphicon glyphicon-pencil"></i>
 			<?php
 				edit_post_link(
 					sprintf(

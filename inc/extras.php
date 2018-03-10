@@ -77,6 +77,31 @@ function shapeSpace_allowed_html() {
         'h4' => array(),
         'h5' => array(),
         'h6' => array(),
+        'form' => array(
+            'action'    => array(),
+            'method'  => array(),
+            'role' => array(),
+        ),
+        'input' => array(
+            'type'    => array(),
+            'name'    => array(),
+            'class'  => array(),
+            'id' => array(),
+            'value'    => array(),
+            'placeholder'  => array(),
+            'required'  => array(),
+            'title'  => array(),
+        ),
+        'button' => array(
+            'type'    => array(),
+            'name'    => array(),
+            'class'  => array(),
+            'id' => array(),
+            'value'    => array(),
+            'placeholder'  => array(),
+            'required'  => array(),
+            'title'  => array(),
+        ),
         'i' => array(),
         'img' => array(
             'alt'    => array(),
@@ -111,4 +136,8 @@ function shapeSpace_allowed_html() {
     );
     
     return $allowed_tags;
+}
+
+function bg_white() {
+    return 'background-color: #fff;';
 }

@@ -13,6 +13,7 @@
 	<header class="entry-header">
 		<?php
 		if ( is_single() ) :
+			the_post_thumbnail( 'full', array('class' => 'img-responsive text-center img-rounded center-block' . cards_class(' mb-xs-3', ' mt-xs-4')) );
 			the_title( '<h1 class="entry-title">', '</h1>' );
 		else :
 			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark" class="no-underline">', '</a></h2>' );
@@ -55,8 +56,11 @@
 
 		if(function_exists('wp_link_pages')) :
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'bootstrap-essentials' ),
-				'after'  => '</div>',
+				'before' => '<ul class="pagination text-center"><li>',
+				'after'  => '</li></ul>',
+				'separator'  => '</li><li>',
+				'link_before'  => '<span class="page-numbers">',
+				'link_after'  => '</span>',
 			) );
 		else :
 			the_posts_navigation();
