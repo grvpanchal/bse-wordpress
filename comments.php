@@ -46,7 +46,7 @@ if ( post_password_required() ) {
 		<?php endif; // Check for comment navigation. ?>
 
 		<ol class="comment-list list-group b-0">
-			<?php wp_list_comments(['callback' => 'bs_media_comment']); ?>
+			<?php wp_list_comments(array('callback' => 'bs_media_comment')); ?>
 		</ol><!-- .comment-list -->
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>

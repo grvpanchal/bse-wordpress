@@ -56,7 +56,7 @@
 
 		if(function_exists('wp_link_pages')) :
 			wp_link_pages( array(
-				'before' => '<ul class="pagination text-center"><li>',
+				'before' => '<ul class="pagination pagination-sm text-center"><li>',
 				'after'  => '</li></ul>',
 				'separator'  => '</li><li>',
 				'link_before'  => '<span class="page-numbers">',
