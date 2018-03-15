@@ -146,4 +146,60 @@ function add_theme_menu_item()
     add_theme_page("Bootstrap Options", "Bootstrap Options", "manage_options", "theme-panel", "theme_settings_page", null, 99);
 }
 
-add_action("admin_menu", "add_theme_menu_item");
+// add_action('customize_register', "add_theme_menu_item");
+
+$wp_customize->add_section( 'parsmizban_options', 
+ array(
+    'title'       => __( 'Bootstrap Options', 'parsmizban' ), //Visible title of section
+    'priority'    => 20, //Determines what order this appears in
+    'capability'  => 'edit_theme_options', //Capability needed to tweak
+    'description' => __('Allows you to customize settings for Theme.', 'parsmizban'), //Descriptive tooltip
+ ) 
+);
+
+$wp_customize->add_setting( 'bootstrap_theme_name', //No need to use a SERIALIZED name, as `theme_mod` settings already live under one db record
+ array(
+    'default'    => 'default', //Default setting/value to save
+    'type'       => 'theme_mod', //Is this an 'option' or a 'theme_mod'?
+    'capability' => 'edit_theme_options', //Optional. Special permissions for accessing this setting.
+    //'transport'  => 'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
+ ) 
+);
+
+//3. Finally, we define the control itself (which links a setting to a section and renders the HTML controls)...
+$wp_customize->add_control( new WP_Customize_Control(
+    $wp_customize, //Pass the $wp_customize object (required)
+    'parsmizban_theme_name', //Set a unique ID for the control
+    array(
+       'label'      => __( 'Select Theme Name', 'parsmizban' ), //Admin-visible name of the control
+       'description' => __( 'Using this option you can change the theme colors' ),
+       'settings'   => 'bootstrap_theme_name', //Which setting to load and manipulate (serialized is okay)
+       'priority'   => 10, //Determines the order this control appears in for the specified section
+       'section'    => 'parsmizban_options', //ID of the section this control should render in (can be one of yours, or a WordPress default section)
+       'type'    => 'select',
+       'choices' => array(
+           'default' => 'Default',
+           'cerulean' => 'Cerulean',
+           'cosmo' => 'Cosmo',
+           'cyborg' => 'Cyborg',
+           'darkly' => 'Darkly',
+           'flatly' => 'Flatly',
+           'green-apple' => 'Green Apple',
+           'journal' => 'Journal',
+           'newcity' => 'New City',
+           'paper' => 'Paper',
+           'power' => 'Power',
+           'readable' => 'Readable',
+           'sandstone' => 'Sandstone',
+           'simplex' => 'Simplex',
+           'so-orange-inside' => 'So Orange Inside',
+           'solar' => 'Solar',
+           'spacelab' => 'Spacelab',
+           'superhero' => 'Superhero',
+           'slate' => 'Slate',
+           'stimulus' => 'Stimulus',
+           'united' => 'United',
+           'yeti' => 'Yeti',
+       )
+   )
+   ) );

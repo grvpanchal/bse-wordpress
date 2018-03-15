@@ -230,8 +230,8 @@ add_action( 'wp_head', 'remove_p_on_pages' );
 function theme_styles() {
 	wp_enqueue_style( 'bs', 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css');
 	wp_enqueue_style( 'bse', 'https://cdn.rawgit.com/grvpanchal/bootstrap-essentials/v0.6.0/dist/css/bootstrap-essentials.min.css');
-	wp_enqueue_style( 'bs-theme', 'http://themes.bootstrapessentials.com/dist/themes/'. get_option('style_option') . '/css/'. get_option('style_option') .'-bootstrap.min.css');
-	wp_enqueue_style( 'bse-theme', 'http://themes.bootstrapessentials.com/dist/themes/'. get_option('style_option') .'/css/'. get_option('style_option') .'-bootstrap-essentials.min.css');
+	wp_enqueue_style( 'bs-theme', 'http://themes.bootstrapessentials.com/dist/themes/'. get_theme_mod( 'bootstrap_theme_name' ) . '/css/'. get_theme_mod( 'bootstrap_theme_name' ) .'-bootstrap.min.css');
+	wp_enqueue_style( 'bse-theme', 'http://themes.bootstrapessentials.com/dist/themes/'. get_theme_mod( 'bootstrap_theme_name' ) .'/css/'. get_theme_mod( 'bootstrap_theme_name' ) .'-bootstrap-essentials.min.css');
 	wp_enqueue_style( 'html5shiv', "https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js", array( 'bs' ) );
 	wp_style_add_data( 'html5shiv', 'conditional', 'lt IE 9' );
 	wp_enqueue_style( 'respond', "https://oss.maxcdn.com/respond/1.4.2/respond.min.js", array( 'bs' ) );
