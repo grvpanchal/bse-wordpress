@@ -23,17 +23,25 @@
 
   <?php
           $navbar_margin = '';
-          $navbar_position = get_option('navbar_position') == '' ? 'static' : get_option('navbar_position');
-          $navbar_type = get_option('navbar_type') == '' ? 'default' : get_option('navbar_type');
-          $navbar_align = get_option('navbar_align') == '' ? 'right' : get_option('navbar_align');
+          $navbar_position = get_theme_mod( 'bootstrap_navbar_position' );
+          $navbar_type = get_theme_mod( 'bootstrap_navbar_type' );
+          $navbar_align = get_theme_mod( 'bootstrap_navbar_align' );
+          $navbar_toggle = get_theme_mod( 'bootstrap_navbar_toggle' );
+          $navbar_toggle_type = 'offcanvas';
+          $navbar_toggle_parent = 'navbar-slide-nav';
           
+          if($navbar_toggle == 'collapse') 
+          {
+            $navbar_toggle_type = 'collapse';
+            $navbar_toggle_parent = '';
+          }
           if($navbar_position == 'fixed')
           {
             $navbar_margin = 'mt-navbar-height';
           }
   ?>
 
-  <body <?php echo esc_attr(body_class(cards_class( 'well b-0 m-xs-0 p-xs-0 ') . ' ' . $navbar_margin)); ?>>
+  <body <?php echo esc_attr(body_class(cards_class( 'well b-0 mb-xs-0 p-xs-0 ') . ' ' . $navbar_margin)); ?>>
       <!--<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'bootstrap-essentials' ); ?></a>-->
 
       <header id="masthead" class="site-header" role="banner">
@@ -53,7 +61,7 @@
         <?php
         }
         ?>
-        <nav class="navbar navbar-<?php echo esc_attr($navbar_type); ?> navbar-<?php echo esc_attr($navbar_position); ?>-top navbar-slide-nav mb-xs-0" role="navigation">
+        <nav class="navbar navbar-<?php echo esc_attr($navbar_type); ?> navbar-<?php echo esc_attr($navbar_position); ?>-top <?php echo esc_attr($navbar_toggle_parent); ?> mb-xs-0" role="navigation">
           <div class="container">
             <div class="navbar-right-static ml-xs-0">
               <ul class="navbar-nav nav">
@@ -61,8 +69,8 @@
               </ul>
             </div>
             <div class="navbar-header">
-              <button type="button" class="navbar-toggle pull-left" data-toggle="offcanvas" data-target="#navbar">
-                <span class="sr-only">Toggle navigation</span>
+              <button type="button" class="navbar-toggle pull-left" data-toggle="<?php echo esc_attr($navbar_toggle_type) ?>" data-target="#navbar">
+                <span class="sr-only"><?php esc_html_e( 'Toggle navigation', 'bootstrap-essentials' ); ?></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -84,7 +92,7 @@
         'theme_location'    => 'menu-1',
         'depth'             => 2,
         'container'         => 'div',
-        'container_class'   => 'offcanvas navbar-slide navbar-'. esc_attr($navbar_align),
+        'container_class'   => esc_attr($navbar_toggle_type) . ' navbar-' . esc_attr($navbar_toggle) .' navbar-'. esc_attr($navbar_align),
         'container_id'      => 'navbar',
         'menu_class'        => 'nav navbar-nav',
         'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',

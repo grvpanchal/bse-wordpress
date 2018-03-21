@@ -16,21 +16,10 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
     <div class="mt-xs-4 <?php echo esc_attr(cards_class('panel panel-default panel-body')); ?>">
 	<?php if(function_exists('dynamic_sidebar')) {
 
-    ob_start();
-    dynamic_sidebar('sidebar-1');
-    $sidebar = ob_get_contents();
-    ob_end_clean();
-	$sidebar_corrected_ul = $sidebar;
-	
-    $sidebar_corrected_ul = str_replace('<ul id="recentcomments">', '<ul class="list-group b-0">', $sidebar_corrected_ul);
-    $sidebar_corrected_ul = str_replace("<ul>", '<ul class="list-group b-0">', $sidebar_corrected_ul);
-    $sidebar_corrected_ul = str_replace('<li class="recentcomments">', '<li class="list-group-item">', $sidebar_corrected_ul);
-    $sidebar_corrected_ul = str_replace('<li class="cat-item', '<li class="list-group-item cat-item', $sidebar_corrected_ul);
-    $sidebar_corrected_ul = str_replace("<li>", '<li class="list-group-item">', $sidebar_corrected_ul);
-    
-    $allowed_html = shapeSpace_allowed_html();
-    echo wp_kses($sidebar_corrected_ul, $allowed_html);
-    // echo $sidebar_corrected_ul;
+        ob_start();
+        dynamic_sidebar('sidebar-1');
+        $sidebar_output = ob_get_clean();
+        echo apply_filters( 'my_sidebar_output', $sidebar_output );
     } 
     
   ?>

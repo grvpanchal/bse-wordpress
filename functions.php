@@ -168,7 +168,7 @@ add_filter( 'embed_oembed_html', 'bootstrap_embed', 10, 3 );
 // Card class - designed for blogs only- pages excluded
 
  function cards_class($class_name, $else_class = '') {
-	 if ( is_home() && get_option( 'blog_panel')=='1' ) {
+	 if ( is_home() && get_theme_mod( 'bootstrap_cards' )=='1' ) {
 		return $class_name;
 	 }
 
@@ -204,6 +204,8 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+require get_template_directory() . '/inc/widget-output.php';
 
 // Register Custom Navigation Walker
 require_once('walkers/wp-bootstrap-navwalker.php');
@@ -248,3 +250,17 @@ function theme_scripts() {
 
 add_action( 'wp_enqueue_scripts', 'theme_styles' );
 add_action( 'wp_enqueue_scripts', 'theme_scripts' );
+
+function my_widget_filter( $sidebar_output ) {
+ 
+    /**
+     * Perform some kind of search and replace here on $sidebar_output.
+     * Regular Expressions will likely be required in order to restrict your
+     * modifications to only the widgets you wish to modify, since $sidebar_output
+     * contains the output of the entire sidebar, including all widgets.
+     */
+ 
+    return $sidebar_output;
+ 
+}
+add_filter( 'my_sidebar_output', 'my_widget_filter' );

@@ -9,7 +9,7 @@
  * @package Bootstrap_Essentials
  */
 
-$footer_type = get_option('footer_type') == '' ? 'navbar-inverse' : get_option('footer_type');
+$footer_type = get_theme_mod( 'bootstrap_footer_type' );
 
 ?>
 <footer id="colophon" class="footer <?php echo esc_attr($footer_type); ?>" role="contentinfo">
