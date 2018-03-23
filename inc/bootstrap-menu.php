@@ -16,7 +16,8 @@ function bse_theme_customize_register( $wp_customize )
         'default'    => 'default',
         'type'       => 'theme_mod',
         'capability' => 'edit_theme_options',
-        //'transport'  => 'postMessage',
+        'transport'  => 'refresh',
+        'sanitize_callback'  => 'esc_attr',
     ) 
     );
 
@@ -25,7 +26,7 @@ function bse_theme_customize_register( $wp_customize )
         'bootstrap-essentials_theme_name',
         array(
         'label'      => __( 'Select Theme Name', 'bootstrap-essentials' ),
-        'description' => __( 'Using this option you can change the theme colors.' ),
+        'description' => __( 'Using this option you can change the theme colors.', 'bootstrap-essentials'  ),
         'settings'   => 'bootstrap_theme_name', 
         'priority'   => 10,
         'section'    => 'bootstrap-essentials_options',
@@ -62,7 +63,8 @@ function bse_theme_customize_register( $wp_customize )
         'default'    => 'default',
         'type'       => 'theme_mod',
         'capability' => 'edit_theme_options',
-        //'transport'  => 'postMessage',
+        'transport'  => 'refresh',
+        'sanitize_callback'  => 'esc_attr',
     ) 
     );
 
@@ -71,7 +73,7 @@ function bse_theme_customize_register( $wp_customize )
         'bootstrap-essentials_navbar_type',
         array(
         'label'      => __( 'Select Navbar Type', 'bootstrap-essentials' ),
-        'description' => __( 'Using this option you can change navbar colors.' ),
+        'description' => __( 'Using this option you can change navbar colors.', 'bootstrap-essentials'  ),
         'settings'   => 'bootstrap_navbar_type', 
         'priority'   => 20,
         'section'    => 'bootstrap-essentials_options',
@@ -88,7 +90,8 @@ function bse_theme_customize_register( $wp_customize )
         'default'    => 'right',
         'type'       => 'theme_mod',
         'capability' => 'edit_theme_options',
-        //'transport'  => 'postMessage',
+        'transport'  => 'refresh',
+        'sanitize_callback'  => 'esc_attr',
     ) 
     );
 
@@ -97,7 +100,7 @@ function bse_theme_customize_register( $wp_customize )
         'bootstrap-essentials_navbar_align',
         array(
         'label'      => __( 'Select Navbar Alignment', 'bootstrap-essentials' ),
-        'description' => __( 'Using this option you can change navbar alignment.' ),
+        'description' => __( 'Using this option you can change navbar alignment.', 'bootstrap-essentials'  ),
         'settings'   => 'bootstrap_navbar_align', //Wh
         'priority'   => 30,
         'section'    => 'bootstrap-essentials_options',
@@ -114,7 +117,8 @@ function bse_theme_customize_register( $wp_customize )
         'default'    => 'static',
         'type'       => 'theme_mod',
         'capability' => 'edit_theme_options',
-        //'transport'  => 'postMessage',
+        'transport'  => 'refresh',
+        'sanitize_callback'  => 'esc_attr',
     ) 
     );
 
@@ -123,7 +127,7 @@ function bse_theme_customize_register( $wp_customize )
         'bootstrap-essentials_navbar_position',
         array(
         'label'      => __( 'Select Navbar Position', 'bootstrap-essentials' ),
-        'description' => __( 'Using this option you can change navbar position.' ),
+        'description' => __( 'Using this option you can change navbar position.', 'bootstrap-essentials'  ),
         'settings'   => 'bootstrap_navbar_position', 
         'priority'   => 40,
         'section'    => 'bootstrap-essentials_options',
@@ -140,7 +144,8 @@ function bse_theme_customize_register( $wp_customize )
         'default'    => 'slide',
         'type'       => 'theme_mod',
         'capability' => 'edit_theme_options',
-        //'transport'  => 'postMessage',
+        'transport'  => 'refresh',
+        'sanitize_callback'  => 'esc_attr',
     ) 
     );
 
@@ -149,7 +154,7 @@ function bse_theme_customize_register( $wp_customize )
         'bootstrap-essentials_navbar_toggle',
         array(
         'label'      => __( 'Select Navbar Toggle', 'bootstrap-essentials' ),
-        'description' => __( 'Using this option you can change navbar toggle in mobile.' ),
+        'description' => __( 'Using this option you can change navbar toggle in mobile.', 'bootstrap-essentials'  ),
         'settings'   => 'bootstrap_navbar_toggle', 
         'priority'   => 40,
         'section'    => 'bootstrap-essentials_options',
@@ -166,7 +171,8 @@ function bse_theme_customize_register( $wp_customize )
         'default'    => 'navbar-default',
         'type'       => 'theme_mod',
         'capability' => 'edit_theme_options',
-        //'transport'  => 'postMessage',
+        'transport'  => 'refresh',
+        'sanitize_callback'  => 'esc_attr',
     ) 
     );
 
@@ -175,7 +181,7 @@ function bse_theme_customize_register( $wp_customize )
         'bootstrap-essentials_footer_type',
         array(
         'label'      => __( 'Select Footer Color', 'bootstrap-essentials' ),
-        'description' => __( 'Using this option you can change footer colors.' ),
+        'description' => __( 'Using this option you can change footer colors.', 'bootstrap-essentials'  ),
         'settings'   => 'bootstrap_footer_type', 
         'priority'   => 50,
         'section'    => 'bootstrap-essentials_options',
@@ -193,7 +199,8 @@ function bse_theme_customize_register( $wp_customize )
         'default'    => '1',
         'type'       => 'theme_mod',
         'capability' => 'edit_theme_options',
-        //'transport'  => 'postMessage',
+        'transport'  => 'refresh',
+        'sanitize_callback'  => 'esc_attr',
     ) 
     );
 
@@ -202,7 +209,7 @@ function bse_theme_customize_register( $wp_customize )
         'bootstrap-essentials_cards',
         array(
         'label'      => __( 'Blog in Cards', 'bootstrap-essentials' ),
-        'description' => __( 'Organise your blog within cards layout.' ),
+        'description' => __( 'Organise your blog within cards layout.', 'bootstrap-essentials'  ),
         'settings'   => 'bootstrap_cards', 
         'priority'   => 15,
         'section'    => 'bootstrap-essentials_options',

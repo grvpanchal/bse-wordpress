@@ -14,14 +14,8 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 
 <aside id="secondary" class="widget-area page-sidebar" role="complementary">
     <div class="mt-xs-4 <?php echo esc_attr(cards_class('panel panel-default panel-body')); ?>">
-	<?php if(function_exists('dynamic_sidebar')) {
-
-        ob_start();
+	<?php
         dynamic_sidebar('sidebar-1');
-        $sidebar_output = ob_get_clean();
-        echo apply_filters( 'my_sidebar_output', $sidebar_output );
-    } 
-    
-  ?>
+    ?>
   </div>
 </aside><!-- #secondary -->

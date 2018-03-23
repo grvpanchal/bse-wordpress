@@ -111,10 +111,10 @@ add_action( 'widgets_init', 'bse_wordpress_widgets_init' );
 /**
  * Registers an editor stylesheet for the theme.
  */
-function wpdocs_theme_add_editor_styles() {
+function bse_wpdocs_theme_add_editor_styles() {
     add_editor_style( 'custom-editor-style.css' );
 }
-add_action( 'admin_init', 'wpdocs_theme_add_editor_styles' );
+add_action( 'admin_init', 'bse_wpdocs_theme_add_editor_styles' );
 
 /**
  * Enqueue scripts and styles.
@@ -134,22 +134,22 @@ add_action( 'wp_enqueue_scripts', 'bse_wordpress_scripts' );
 /**
  * The Excert filter.
  */
- function new_excerpt_more( $more ) {
+ function bse_excerpt_more( $more ) {
     return '...';
 }
-add_filter('excerpt_more', 'new_excerpt_more');
+add_filter('excerpt_more', 'bse_excerpt_more');
 
 /**
 * Wrap embed html with bootstrap responsive embed div
 */
-function bootstrap_embed( $html, $url, $attr ) {
+function bse_bootstrap_embed( $html, $url, $attr ) {
 	if ( ! is_admin() ) {
 		return "<div class=\"embed-responsive embed-responsive-16by9\">" . $html . "</div>";
 	} else {
 		return $html;
 	}
 }
-add_filter( 'embed_oembed_html', 'bootstrap_embed', 10, 3 );
+add_filter( 'embed_oembed_html', 'bse_bootstrap_embed', 10, 3 );
 
 /**
  * Sidebar Class.
@@ -199,6 +199,7 @@ require get_template_directory() . '/inc/extras.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
+require get_template_directory() . '/inc/bootstrap-menu.php';
 
 /**
  * Load Jetpack compatibility file.
@@ -218,9 +219,6 @@ require_once('walkers/wp-bootstrap-commentformwalker.php');
 
 // Register Paginination 
 require_once('walkers/wp-bootstrap-pagination.php');
-
-// Bootstrap Dashboard
-require_once('bootstrapmenu.php');
 
 function remove_p_on_pages() {
     if ( is_page() ) {

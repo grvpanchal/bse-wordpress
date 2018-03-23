@@ -47,7 +47,7 @@
 				the_title( '<span class="screen-reader-text">"', '"</span>', false )
 			) );
 			?>
-			<div class="pull-right"><a href="<?php echo esc_url( get_permalink() ) ?>" class="btn btn-danger">Read More</a></div>
+			<div class="pull-right"><a href="<?php echo esc_url( get_permalink() ) ?>" class="btn btn-danger"><?php esc_html_e("Read More", 'bootstrap-essentials'); ?></a></div>
 			<div class="entry-footer mt-xs-4">
 				<?php bse_wordpress_entry_footer(); ?>
 			</div><!-- .entry-footer -->
