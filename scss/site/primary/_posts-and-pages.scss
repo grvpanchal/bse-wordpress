@@ -1,0 +1,21 @@
+.sticky {
+	display: block;
+}
+
+.hentry {
+	margin: 0 0 $line-height-computed;
+}
+
+.updated:not(.published) {
+	display: none;
+}
+
+.entry-content,
+.entry-summary {
+	margin: $line-height-computed 0 0;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 $line-height-computed;
+}

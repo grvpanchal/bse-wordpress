@@ -1,0 +1,8 @@
+.widget {
+	margin: 0 0 $line-height-computed;
+
+	/* Make sure select elements fit in widgets. */
+	select, input {
+		@extend .form-control
+	}
+}
